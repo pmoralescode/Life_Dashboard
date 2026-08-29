@@ -2,8 +2,13 @@ import streamlit as st
 import pandas as pd
 from streamlit_calendar import calendar
 import data
+import auth
 
-PERSON_COLORS = {"Paul": "#3B82F6", "Camila": "#EC4899"}
+st.set_page_config(page_icon="📅", layout="wide")
+
+auth.check_password()
+
+PERSON_COLORS = data.PERSON_COLORS
 
 data.init_db()
 
